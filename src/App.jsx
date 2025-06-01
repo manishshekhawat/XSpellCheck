@@ -39,7 +39,7 @@ function App() {
         onChange={handleChange}
         style={{ width: "300px", height: "100px" }}
       />
-      {output && <p>Did you mean: {output}</p>}
+      {output && <p>Did you mean: {output}?</p>}
     </>
   );
 }
