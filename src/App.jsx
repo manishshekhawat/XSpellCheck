@@ -20,16 +20,20 @@ function App() {
   };
 
   useEffect(() => {
-    const inputArray = input.split(" ");
+  const inputArray = input.split(" ");
 
-    const misspelledWord = inputArray.find((word) => customDictionary[word]);
+  const misspelledWord = inputArray.find((word) => {
+    const lowerWord = word.toLowerCase();
+    return customDictionary[lowerWord];
+  });
 
-    if (misspelledWord) {
-      setOutput(customDictionary[misspelledWord]);
-    } else {
-      setOutput(""); // clear output if nothing found
-    }
-  }, [input]);
+  if (misspelledWord) {
+    setOutput(customDictionary[misspelledWord.toLowerCase()]);
+  } else {
+    setOutput("");
+  }
+}, [input]);
+
 
   return (
     <>
